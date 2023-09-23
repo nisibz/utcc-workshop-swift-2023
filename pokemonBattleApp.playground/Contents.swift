@@ -1,6 +1,6 @@
 import UIKit
 
-class GameCharector {
+class GameCharecter {
     
     var cName: String
     var cHealth: Double = 100.0
@@ -10,13 +10,13 @@ class GameCharector {
         self.cName = name
     }
     
-    func attack(target: GameCharector) {
+    func attack(target: GameCharecter) {
         target.cHealth = target.cHealth - self.cDemage
     }
 }
 
-class Hero: GameCharector {
-    override func attack (target: GameCharector) {
+class Hero: GameCharecter {
+    override func attack (target: GameCharecter) {
         
         let luckkyNumber = arc4random_uniform(10)
         
@@ -28,12 +28,12 @@ class Hero: GameCharector {
     }
 }
 
-class Monster: GameCharector {
+class Monster: GameCharecter {
     func heal() {
         self.cHealth = self.cHealth * 1.2
     }
     
-    override func attack(target: GameCharector) {
+    override func attack(target: GameCharecter) {
         let luckyNumber = arc4random_uniform(10)
         if luckyNumber > 8 {
             self.heal ()
@@ -41,6 +41,7 @@ class Monster: GameCharector {
         super.attack(target: target)
     }
 }
+
 
 //--------------------------------
 
